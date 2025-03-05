@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('CodeSacn'){
             steps{
-                sh 'trivy --version'
+                sh 'trivy fs . -o result.html'
                 
             }
         }
