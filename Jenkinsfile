@@ -1,22 +1,20 @@
 pipeline {
     agent any 
     stages{
-        stage('clone'){
+        stage('CodeSacn'){
             steps{
-                sh 'echo "clone"'
-                sh 'uname -r'
-                sh 'nproc'
+                sh 'trivy --version'
+                
             }
         }
-        stage('test'){
+        stage('docker(mageBuild)'){
             steps{
-                sh 'echo "test"'
+                sh 'docker -v'
             }
         }
-        stage('cratefile'){
+        stage('pushImage')
             steps{
-                sh 'touch text-$BUID_ID'
+                sh 'docker ps'
             }
-        }
-    }
+        }  
 }
