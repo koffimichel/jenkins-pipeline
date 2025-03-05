@@ -4,6 +4,7 @@ pipeline {
         stage('CodeSacn'){
             steps{
                 sh 'trivy fs . -o result.html'
+                sh 'cat result.html'
                 
             }
         }
@@ -12,9 +13,10 @@ pipeline {
                 sh 'docker -v'
             }
         }
-        stage('pushImage')
+        stage('pushImage'){
             steps{
                 sh 'docker ps'
             }
         }  
+}
 }
