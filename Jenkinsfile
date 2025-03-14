@@ -1,21 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage ('checkout') {
+        stage ('cCodeScan') {
             steps {
-                sh 'echo "clone"'
-                sh 'uname -r'
+                sh 'trivy --version'
 
             }
         }
-        stage ('test') {
+        stage ('dockerImageBuild') {
             steps {
-                sh 'echo "test"'
+                sh 'docker -v'
             }
         }
-        stage ('createfile') {
+        stage ('pushImage') {
             steps {
-                sh 'touch text-$BUILD_ID'
+                sh 'docker ps'
             }
         }
     }
