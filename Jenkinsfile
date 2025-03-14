@@ -4,6 +4,7 @@ pipeline {
         stage ('checkout') {
             steps {
                 sh 'echo "clone"'
+                sh 'uname -r'
 
             }
         }
