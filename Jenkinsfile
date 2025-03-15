@@ -30,10 +30,8 @@ pipeline {
         }
         stage ('dockerImageTag') {
             steps {
-                sh "docker tag jenjins-ci:latest \
-                $IMAGE_ECR_REPO:latest"
-                sh "docker tag imageversion \
-               $IMAGE_ECR_REPO :v1.$BUILD_NUMBER"
+                sh "docker tag jenjins-ci:latest $IMAGE_ECR_REPO:latest"
+                sh "docker tag imageversion $IMAGE_ECR_REPO :v1.$BUILD_NUMBER"
             }
         }
         stage ('pushImage') {
