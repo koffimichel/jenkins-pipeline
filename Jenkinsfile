@@ -38,7 +38,7 @@ pipeline {
         }
         stage ('pushImage') {
             steps {
-                sh "docker push $IMAGE_ECR_REPO/jenjins-ci:latest"
+                sh "docker push $IMAGE_ECR_REPO:latest"
                 sh "docker push $IMAGE_ECR_REPO:v1.$BUILD_NUMBER"
             }
         }
