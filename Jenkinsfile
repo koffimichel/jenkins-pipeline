@@ -1,6 +1,6 @@
 pipeline {
 
-    agent any {
+    agent any 
     stages {
         stage ('clone') {
             steps {
@@ -17,6 +17,6 @@ pipeline {
                 sh 'touch text-$BUILD_ID'
                 }
             }
-        }
+        
     }
 }
